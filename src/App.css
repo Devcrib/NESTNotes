@@ -1,10 +1,11 @@
-body{
+html, body{
     padding:0;
     margin: 0;
     font-family: sans-serif;
     height: 100%;
     width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body *{
@@ -22,7 +23,7 @@ body *{
 }
 
 .text{
-    width: 70%;
+    width: 69%;
     float: right;
     border: none;
     height: 75vh;
@@ -191,7 +192,7 @@ input[placeholder="All notes"]:focus {
 
 .col2 {
     height: 100%;
-    width: 70%;
+    width: 69%;
     float: right;
     margin: 0;
 }
@@ -239,4 +240,73 @@ ul.dropdown > li.divider {
     width: 100%;
     height: .5px;
     padding: 0;
+}
+
+.side-bar-1 {
+    border-right: 1px solid #ccc;
+    width: 0;
+    float: left;
+    height: 84vh;
+    background-color: #fff;
+
+}
+
+.side-bar-1.show {
+    animation: show-menu .2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show-menu {
+    from {
+        width: 0
+    } to {
+        width: 30%;
+    }
+}
+
+.side-bar-1.hide {
+    animation: hide-menu .2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hide-menu {
+    from {
+        width: 30%
+    } to {
+        width: 0;
+    }
+}
+
+.side-bar-1 .section-1 {
+    border-bottom: 1px solid #ccc;
+    padding: 0 20px;
+    display: none;
+}
+
+.side-bar .section-1 h4 {
+    margin: 0 !important;
+}
+
+.side-bar-1 .section-1 i {
+    float: none !important;
+    height: 40px !important;
+    line-height: 40px !important;
+}
+
+.side-bar-1 .mdi-close {
+    float: right;
+    display: none;
+}
+
+.side-bar-1 .section-1 i::before {
+    font-size: 22px !important;
+}
+
+.side-bar-1 .tags {
+    padding: 0 20px;
+    display: none;
+}
+
+.side-bar-1 .tags h6 {
+    color: #ccc;
 }
